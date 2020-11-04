@@ -1,16 +1,35 @@
 package routes
 
 import (
-	"../domains"
-	"../services"
+	"backend/domains"
+	"backend/services"
 	"github.com/gofiber/fiber"
+	"strconv"
 )
 
 func ConfigColaboradorRoute(service *services.ColaboradorService, app *fiber.App) {
 	colaboradoresGroup := app.Group("/colaboradores")
 
 	colaboradoresGroup.Get("/", func(ctx *fiber.Ctx) {
-		err := ctx.JSON(service.GetAll())
+		colaborador, err := service.GetAll()
+		if err != nil {
+			ctx.Next(err)
+			return
+		}
+		err = ctx.JSON(colaborador)
+		if err != nil {
+			ctx.Next(err)
+		}
+	})
+
+	colaboradoresGroup.Get("/:id", func(ctx *fiber.Ctx) {
+		id := ctx.Params("id")
+		colaborador, err := service.GetOne(id)
+		if err != nil {
+			ctx.Next(err)
+			return
+		}
+		err = ctx.JSON(colaborador)
 		if err != nil {
 			ctx.Next(err)
 		}
@@ -22,6 +41,12 @@ func ConfigColaboradorRoute(service *services.ColaboradorService, app *fiber.App
 			ctx.Next(err)
 			return
 		}
-		service.Create(colaborador)
+		colaborador, err := service.Create(colaborador)
+		if err != nil {
+			ctx.Next(err)
+		}
+		ctx.Set("Location", ctx.Path() + "/" + strconv.Itoa(int(colaborador.ID)))
+		ctx.Status(201)
+		ctx.Send("")
 	})
 }

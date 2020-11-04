@@ -1,0 +1,19 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    restart: unless-stopped
+    volumes:
+      - ./pgdata:/var/lib/postgres/data
+    environment:
+      POSTGRES_DB: gorm
+      POSTGRES_USER: gorm
+      POSTGRES_PASSWORD: gorm
+    ports:
+    - "5432:5432"
+  web:
+    image: backendservice:latest
+    depends_on:
+      - db
+    ports:
+    - "3000:3000"

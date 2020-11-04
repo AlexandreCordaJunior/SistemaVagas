@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./config"
+	"backend/config"
 	"github.com/gofiber/fiber"
 	"log"
 )

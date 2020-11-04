@@ -1,9 +1,9 @@
 package config
 
 import (
-	"../domains"
-	"../routes"
-	"../services"
+	"backend/domains"
+	"backend/routes"
+	"backend/services"
 	"github.com/gofiber/fiber"
 )
 

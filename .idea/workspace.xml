@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a160cf6-c87e-4edf-9aaa-70ff685917da" name="Default Changelist" comment="">
+    <list default="true" id="7a160cf6-c87e-4edf-9aaa-70ff685917da" name="Default Changelist" comment="a">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/index.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/index.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gorm.db" beforeDir="false" afterPath="$PROJECT_DIR$/gorm.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/ColaboradorRouter.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ColaboradorRouter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/ColaboradorService.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/ColaboradorService.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,11 +50,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1jkxq0DThL448fQhfI69sxuUcwB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -46,7 +79,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="go build app.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <working_directory value="$PROJECT_DIR$" />
@@ -55,8 +88,17 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Go Build.go build app.go" />
       </list>
     </recent_temporary>
@@ -64,6 +106,23 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="a" />
+    <option name="LAST_COMMIT_MESSAGE" value="a" />
   </component>
   <component name="WindowStateProjectService">
     <state x="478" y="317" key="#GOROOT" timestamp="1604362105785">
@@ -74,45 +133,65 @@
       <screen x="0" y="1" width="1366" height="767" />
     </state>
     <state x="478" y="221" width="400" height="325" key="#Go_Modules/0.1.1366.767@0.1.1366.767" timestamp="1604362135067" />
-    <state width="1324" height="231" key="GridCell.Tab.0.bottom" timestamp="1604366118236">
+    <state width="1324" height="185" key="GridCell.Tab.0.bottom" timestamp="1604524080236">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="231" key="GridCell.Tab.0.bottom/0.1.1366.767@0.1.1366.767" timestamp="1604366118236" />
-    <state width="1324" height="231" key="GridCell.Tab.0.center" timestamp="1604366118234">
+    <state width="1324" height="185" key="GridCell.Tab.0.bottom/0.1.1366.767@0.1.1366.767" timestamp="1604524080236" />
+    <state width="1324" height="185" key="GridCell.Tab.0.center" timestamp="1604524080235">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="231" key="GridCell.Tab.0.center/0.1.1366.767@0.1.1366.767" timestamp="1604366118234" />
-    <state width="1324" height="231" key="GridCell.Tab.0.left" timestamp="1604366118233">
+    <state width="1324" height="185" key="GridCell.Tab.0.center/0.1.1366.767@0.1.1366.767" timestamp="1604524080235" />
+    <state width="1324" height="185" key="GridCell.Tab.0.left" timestamp="1604524080234">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="231" key="GridCell.Tab.0.left/0.1.1366.767@0.1.1366.767" timestamp="1604366118233" />
-    <state width="1324" height="231" key="GridCell.Tab.0.right" timestamp="1604366118235">
+    <state width="1324" height="185" key="GridCell.Tab.0.left/0.1.1366.767@0.1.1366.767" timestamp="1604524080234" />
+    <state width="1324" height="185" key="GridCell.Tab.0.right" timestamp="1604524080236">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="231" key="GridCell.Tab.0.right/0.1.1366.767@0.1.1366.767" timestamp="1604366118235" />
-    <state width="1324" height="231" key="GridCell.Tab.1.bottom" timestamp="1604366118241">
+    <state width="1324" height="185" key="GridCell.Tab.0.right/0.1.1366.767@0.1.1366.767" timestamp="1604524080236" />
+    <state width="1324" height="231" key="GridCell.Tab.1.bottom" timestamp="1604523131860">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="231" key="GridCell.Tab.1.bottom/0.1.1366.767@0.1.1366.767" timestamp="1604366118241" />
-    <state width="1324" height="231" key="GridCell.Tab.1.center" timestamp="1604366118239">
+    <state width="1324" height="231" key="GridCell.Tab.1.bottom/0.1.1366.767@0.1.1366.767" timestamp="1604523131860" />
+    <state width="1324" height="231" key="GridCell.Tab.1.center" timestamp="1604523131859">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="231" key="GridCell.Tab.1.center/0.1.1366.767@0.1.1366.767" timestamp="1604366118239" />
-    <state width="1324" height="231" key="GridCell.Tab.1.left" timestamp="1604366118237">
+    <state width="1324" height="231" key="GridCell.Tab.1.center/0.1.1366.767@0.1.1366.767" timestamp="1604523131859" />
+    <state width="1324" height="231" key="GridCell.Tab.1.left" timestamp="1604523131859">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="231" key="GridCell.Tab.1.left/0.1.1366.767@0.1.1366.767" timestamp="1604366118237" />
-    <state width="1324" height="231" key="GridCell.Tab.1.right" timestamp="1604366118240">
+    <state width="1324" height="231" key="GridCell.Tab.1.left/0.1.1366.767@0.1.1366.767" timestamp="1604523131859" />
+    <state width="1324" height="231" key="GridCell.Tab.1.right" timestamp="1604523131860">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="231" key="GridCell.Tab.1.right/0.1.1366.767@0.1.1366.767" timestamp="1604366118240" />
+    <state width="1324" height="231" key="GridCell.Tab.1.right/0.1.1366.767@0.1.1366.767" timestamp="1604523131860" />
     <state x="-93" y="6" key="SettingsEditor" timestamp="1604362243654">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
     <state x="-93" y="6" key="SettingsEditor/0.1.1366.767@0.1.1366.767" timestamp="1604362243654" />
-    <state x="389" y="133" width="587" height="502" key="find.popup" timestamp="1604365907897">
+    <state x="278" y="120" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1604366899442">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state x="389" y="133" width="587" height="502" key="find.popup/0.1.1366.767@0.1.1366.767" timestamp="1604365907897" />
+    <state x="278" y="120" width="800" height="526" key="Vcs.Push.Dialog.v2/0.1.1366.767@0.1.1366.767" timestamp="1604366899442" />
+    <state x="389" y="133" width="587" height="502" key="find.popup" timestamp="1604527697901">
+      <screen x="0" y="1" width="1366" height="767" />
+    </state>
+    <state x="389" y="133" width="587" height="502" key="find.popup/0.1.1366.767@0.1.1366.767" timestamp="1604527697901" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/routes/ColaboradorRouter.go</url>
+          <line>25</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/services/ColaboradorService.go</url>
+          <line>25</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
