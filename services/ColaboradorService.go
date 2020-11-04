@@ -23,8 +23,8 @@ func (s *ColaboradorService) GetAll() ([]*domains.Colaborador, error) {
 }
 
 func (s *ColaboradorService) GetOne(id string) (*domains.Colaborador, error) {
-	var colaborador *domains.Colaborador
-	err := s.db.Where("id = ?", id).First(colaborador).Error
+	colaborador := &domains.Colaborador{}
+	err := s.db.First(colaborador, id).Error
 	if err != nil {
 		return nil, err
 	}
@@ -38,4 +38,28 @@ func (s *ColaboradorService) Create(colaborador *domains.Colaborador) (*domains.
 	}
 	s.db.Create(colaborador)
 	return colaborador, nil
+}
+
+func (s *ColaboradorService) Update(colaboradorNovo *domains.Colaborador, id string) (*domains.Colaborador, error) {
+	colaboradorAntigo, err := s.GetOne(id)
+	if err != nil {
+		return nil, err
+	}
+
+	UpdateColaborador(colaboradorAntigo, colaboradorNovo)
+	err = s.db.Save(colaboradorNovo).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return colaboradorNovo, nil
+}
+
+func (s *ColaboradorService) Delete(id string) error {
+	colaborador := &domains.Colaborador{}
+	err := s.db.Delete(colaborador, id).Error
+	if err != nil {
+		return err
+	}
+	return nil
 }

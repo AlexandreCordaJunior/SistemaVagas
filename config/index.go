@@ -18,8 +18,18 @@ func Configure(app *fiber.App) error {
 	if err != nil {
 		return err
 	}
+
+	//Vagas
+	err = db.AutoMigrate(&domains.Vaga{})
+	if err != nil {
+		return err
+	}
+
 	colaboradorService := services.ColaboradorServiceFactory(db)
+	vagaService := services.VagaServiceFactory(db)
+
 	routes.ConfigColaboradorRoute(colaboradorService, app)
+	routes.ConfigVagaRoute(vagaService, app)
 
 	return nil
 }

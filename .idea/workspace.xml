@@ -19,17 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a160cf6-c87e-4edf-9aaa-70ff685917da" name="Default Changelist" comment="a">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="7a160cf6-c87e-4edf-9aaa-70ff685917da" name="Default Changelist" comment="go mod e conectado ao psql com docker">
+      <change afterPath="$PROJECT_DIR$/domains/Vaga.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instrucoes.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/VagaRouter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/VagaService.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/util.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/index.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/index.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gorm.db" beforeDir="false" afterPath="$PROJECT_DIR$/gorm.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/ColaboradorRouter.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ColaboradorRouter.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/ColaboradorService.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/ColaboradorService.go" afterDir="false" />
     </list>
@@ -62,20 +63,25 @@
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/routes" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/routes" />
+      <recent name="$PROJECT_DIR$/services" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -122,7 +128,11 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="a" />
-    <option name="LAST_COMMIT_MESSAGE" value="a" />
+    <MESSAGE value="go mod e conectado ao psql com docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="go mod e conectado ao psql com docker" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
     <state x="478" y="317" key="#GOROOT" timestamp="1604362105785">
@@ -133,6 +143,10 @@
       <screen x="0" y="1" width="1366" height="767" />
     </state>
     <state x="478" y="221" width="400" height="325" key="#Go_Modules/0.1.1366.767@0.1.1366.767" timestamp="1604362135067" />
+    <state x="416" y="134" width="524" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604530166371">
+      <screen x="0" y="1" width="1366" height="767" />
+    </state>
+    <state x="416" y="134" width="524" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.1.1366.767@0.1.1366.767" timestamp="1604530166371" />
     <state width="1324" height="185" key="GridCell.Tab.0.bottom" timestamp="1604524080236">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
@@ -165,33 +179,17 @@
       <screen x="0" y="1" width="1366" height="767" />
     </state>
     <state width="1324" height="231" key="GridCell.Tab.1.right/0.1.1366.767@0.1.1366.767" timestamp="1604523131860" />
-    <state x="-93" y="6" key="SettingsEditor" timestamp="1604362243654">
+    <state x="187" y="19" key="SettingsEditor" timestamp="1604530112155">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state x="-93" y="6" key="SettingsEditor/0.1.1366.767@0.1.1366.767" timestamp="1604362243654" />
-    <state x="278" y="120" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1604366899442">
+    <state x="187" y="19" key="SettingsEditor/0.1.1366.767@0.1.1366.767" timestamp="1604530112155" />
+    <state x="278" y="120" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1604529720501">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state x="278" y="120" width="800" height="526" key="Vcs.Push.Dialog.v2/0.1.1366.767@0.1.1366.767" timestamp="1604366899442" />
+    <state x="278" y="120" width="800" height="526" key="Vcs.Push.Dialog.v2/0.1.1366.767@0.1.1366.767" timestamp="1604529720501" />
     <state x="389" y="133" width="587" height="502" key="find.popup" timestamp="1604527697901">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
     <state x="389" y="133" width="587" height="502" key="find.popup/0.1.1366.767@0.1.1366.767" timestamp="1604527697901" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/routes/ColaboradorRouter.go</url>
-          <line>25</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/services/ColaboradorService.go</url>
-          <line>25</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
