@@ -16,7 +16,12 @@ func ConfigColaboradorRoute(service *services.ColaboradorService, app *fiber.App
 			ctx.Next(err)
 			return
 		}
-		err = ctx.JSON(colaborador)
+		var colaboradorDTO []*domains.ColaboradorSimplesDTO
+		for _, c := range colaborador {
+			colaboradorDTO = append(colaboradorDTO, c.GetColaboradorSimplesDTO())
+		}
+
+		err = ctx.JSON(colaboradorDTO)
 		if err != nil {
 			ctx.Next(err)
 		}
@@ -29,18 +34,22 @@ func ConfigColaboradorRoute(service *services.ColaboradorService, app *fiber.App
 			ctx.Next(err)
 			return
 		}
-		err = ctx.JSON(colaborador)
+
+		colaboradorDTO := colaborador.GetColaboradorComplexoDTO()
+		err = ctx.JSON(colaboradorDTO)
 		if err != nil {
 			ctx.Next(err)
 		}
 	})
 
 	colaboradoresGroup.Post("/", func(ctx *fiber.Ctx) {
-		colaborador := &domains.Colaborador{}
-		if err := ctx.BodyParser(colaborador); err != nil {
+		colaboradorDTO := &domains.ColaboradorSimplesDTO{}
+		if err := ctx.BodyParser(colaboradorDTO); err != nil {
 			ctx.Next(err)
 			return
 		}
+
+		colaborador := colaboradorDTO.FromDTOSimples()
 		colaborador, err := service.Create(colaborador)
 		if err != nil {
 			ctx.Next(err)
@@ -52,12 +61,13 @@ func ConfigColaboradorRoute(service *services.ColaboradorService, app *fiber.App
 
 	colaboradoresGroup.Put("/:id", func(ctx *fiber.Ctx) {
 		id := ctx.Params("id")
-		colaborador := &domains.Colaborador{}
-		if err := ctx.BodyParser(colaborador); err != nil {
+		colaboradorDTO := &domains.ColaboradorSimplesDTO{}
+		if err := ctx.BodyParser(colaboradorDTO); err != nil {
 			ctx.Next(err)
 			return
 		}
 
+		colaborador := colaboradorDTO.FromDTOSimples()
 		colaborador, err := service.Update(colaborador, id)
 		if err != nil {
 			ctx.Next(err)

@@ -16,7 +16,11 @@ func ConfigVagaRoute(service *services.VagaService, app *fiber.App) {
 			ctx.Next(err)
 			return
 		}
-		err = ctx.JSON(vaga)
+		var vagaDTO []*domains.VagaSimplesDTO
+		for _, v := range vaga {
+			vagaDTO = append(vagaDTO, v.GetVagaSimplesDTO())
+		}
+		err = ctx.JSON(vagaDTO)
 		if err != nil {
 			ctx.Next(err)
 		}
@@ -29,18 +33,21 @@ func ConfigVagaRoute(service *services.VagaService, app *fiber.App) {
 			ctx.Next(err)
 			return
 		}
-		err = ctx.JSON(vaga)
+		vagaDTO := vaga.GetVagaComplexaDTO()
+		err = ctx.JSON(vagaDTO)
 		if err != nil {
 			ctx.Next(err)
 		}
 	})
 
 	vagasGroup.Post("/", func(ctx *fiber.Ctx) {
-		vaga := &domains.Vaga{}
-		if err := ctx.BodyParser(vaga); err != nil {
+		vagaDTO := &domains.VagaSimplesDTO{}
+		if err := ctx.BodyParser(vagaDTO); err != nil {
 			ctx.Next(err)
 			return
 		}
+
+		vaga := vagaDTO.FromDTOSimples()
 		vaga, err := service.Create(vaga)
 		if err != nil {
 			ctx.Next(err)
@@ -52,12 +59,13 @@ func ConfigVagaRoute(service *services.VagaService, app *fiber.App) {
 
 	vagasGroup.Put("/:id", func(ctx *fiber.Ctx) {
 		id := ctx.Params("id")
-		vaga := &domains.Vaga{}
-		if err := ctx.BodyParser(vaga); err != nil {
+		vagaDTO := &domains.VagaSimplesDTO{}
+		if err := ctx.BodyParser(vagaDTO); err != nil {
 			ctx.Next(err)
 			return
 		}
 
+		vaga := vagaDTO.FromDTOSimples()
 		vaga, err := service.Update(vaga, id)
 		if err != nil {
 			ctx.Next(err)

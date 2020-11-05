@@ -19,20 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a160cf6-c87e-4edf-9aaa-70ff685917da" name="Default Changelist" comment="go mod e conectado ao psql com docker">
-      <change afterPath="$PROJECT_DIR$/domains/Vaga.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/instrucoes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/VagaRouter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/VagaService.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/util.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backend.iml" afterDir="false" />
+    <list default="true" id="7a160cf6-c87e-4edf-9aaa-70ff685917da" name="Default Changelist" comment="rotas de vagas">
+      <change afterPath="$PROJECT_DIR$/models/vaga_simples_d_t_o.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/index.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/index.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domains/Colaborador.go" beforeDir="false" afterPath="$PROJECT_DIR$/domains/Colaborador.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domains/Vaga.go" beforeDir="false" afterPath="$PROJECT_DIR$/domains/Vaga.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/ColaboradorRouter.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ColaboradorRouter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/ColaboradorService.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/ColaboradorService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/VagaRouter.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/VagaRouter.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +79,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
+  <component name="RunManager">
     <configuration name="go build app.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <working_directory value="$PROJECT_DIR$" />
@@ -102,12 +96,6 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Go Build.go build app.go" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,7 +117,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="a" />
     <MESSAGE value="go mod e conectado ao psql com docker" />
-    <option name="LAST_COMMIT_MESSAGE" value="go mod e conectado ao psql com docker" />
+    <MESSAGE value="rotas de vagas" />
+    <option name="LAST_COMMIT_MESSAGE" value="rotas de vagas" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -179,14 +168,22 @@
       <screen x="0" y="1" width="1366" height="767" />
     </state>
     <state width="1324" height="231" key="GridCell.Tab.1.right/0.1.1366.767@0.1.1366.767" timestamp="1604523131860" />
+    <state x="492" y="90" width="372" height="586" key="RollbackChangesDialog" timestamp="1604544006994">
+      <screen x="0" y="1" width="1366" height="767" />
+    </state>
+    <state x="492" y="90" width="372" height="586" key="RollbackChangesDialog/0.1.1366.767@0.1.1366.767" timestamp="1604544006994" />
     <state x="187" y="19" key="SettingsEditor" timestamp="1604530112155">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
     <state x="187" y="19" key="SettingsEditor/0.1.1366.767@0.1.1366.767" timestamp="1604530112155" />
-    <state x="278" y="120" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1604529720501">
+    <state x="278" y="120" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1604534074634">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state x="278" y="120" width="800" height="526" key="Vcs.Push.Dialog.v2/0.1.1366.767@0.1.1366.767" timestamp="1604529720501" />
+    <state x="278" y="120" width="800" height="526" key="Vcs.Push.Dialog.v2/0.1.1366.767@0.1.1366.767" timestamp="1604534074634" />
+    <state x="491" y="301" width="373" height="164" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604542311301">
+      <screen x="0" y="1" width="1366" height="767" />
+    </state>
+    <state x="491" y="301" width="373" height="164" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.1.1366.767@0.1.1366.767" timestamp="1604542311301" />
     <state x="389" y="133" width="587" height="502" key="find.popup" timestamp="1604527697901">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
