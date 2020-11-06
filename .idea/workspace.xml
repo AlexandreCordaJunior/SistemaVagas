@@ -19,19 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a160cf6-c87e-4edf-9aaa-70ff685917da" name="Default Changelist" comment="DTO">
-      <change afterPath="$PROJECT_DIR$/domains/VagaColaborador.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gorm.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/VagaColaboradorRouter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/VagaColaboradorService.go" afterDir="false" />
+    <list default="true" id="7a160cf6-c87e-4edf-9aaa-70ff685917da" name="Default Changelist" comment="rotas de vaga_colaborador">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/index.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/index.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domains/Colaborador.go" beforeDir="false" afterPath="$PROJECT_DIR$/domains/Colaborador.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domains/Vaga.go" beforeDir="false" afterPath="$PROJECT_DIR$/domains/Vaga.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domains/VagaColaborador.go" beforeDir="false" afterPath="$PROJECT_DIR$/domains/VagaColaborador.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/vaga_simples_d_t_o.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/ColaboradorService.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/ColaboradorService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/VagaColaboradorService.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/VagaColaboradorService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/VagaService.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/VagaService.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +125,8 @@
     <MESSAGE value="go mod e conectado ao psql com docker" />
     <MESSAGE value="rotas de vagas" />
     <MESSAGE value="DTO" />
-    <option name="LAST_COMMIT_MESSAGE" value="DTO" />
+    <MESSAGE value="rotas de vaga_colaborador" />
+    <option name="LAST_COMMIT_MESSAGE" value="rotas de vaga_colaborador" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -151,38 +148,38 @@
       <screen x="0" y="1" width="1366" height="767" />
     </state>
     <state x="416" y="134" width="524" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.1.1366.767@0.1.1366.767" timestamp="1604530166371" />
-    <state width="1324" height="212" key="GridCell.Tab.0.bottom" timestamp="1604630539275">
+    <state width="1324" height="231" key="GridCell.Tab.0.bottom" timestamp="1604632733971">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="212" key="GridCell.Tab.0.bottom/0.1.1366.767@0.1.1366.767" timestamp="1604630539275" />
-    <state width="1324" height="212" key="GridCell.Tab.0.center" timestamp="1604630539275">
+    <state width="1324" height="231" key="GridCell.Tab.0.bottom/0.1.1366.767@0.1.1366.767" timestamp="1604632733971" />
+    <state width="1324" height="231" key="GridCell.Tab.0.center" timestamp="1604632733970">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="212" key="GridCell.Tab.0.center/0.1.1366.767@0.1.1366.767" timestamp="1604630539275" />
-    <state width="1324" height="212" key="GridCell.Tab.0.left" timestamp="1604630539274">
+    <state width="1324" height="231" key="GridCell.Tab.0.center/0.1.1366.767@0.1.1366.767" timestamp="1604632733970" />
+    <state width="1324" height="231" key="GridCell.Tab.0.left" timestamp="1604632733970">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="212" key="GridCell.Tab.0.left/0.1.1366.767@0.1.1366.767" timestamp="1604630539274" />
-    <state width="1324" height="212" key="GridCell.Tab.0.right" timestamp="1604630539275">
+    <state width="1324" height="231" key="GridCell.Tab.0.left/0.1.1366.767@0.1.1366.767" timestamp="1604632733970" />
+    <state width="1324" height="231" key="GridCell.Tab.0.right" timestamp="1604632733970">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="212" key="GridCell.Tab.0.right/0.1.1366.767@0.1.1366.767" timestamp="1604630539275" />
-    <state width="1324" height="231" key="GridCell.Tab.1.bottom" timestamp="1604629003241">
+    <state width="1324" height="231" key="GridCell.Tab.0.right/0.1.1366.767@0.1.1366.767" timestamp="1604632733970" />
+    <state width="1324" height="231" key="GridCell.Tab.1.bottom" timestamp="1604632733972">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="231" key="GridCell.Tab.1.bottom/0.1.1366.767@0.1.1366.767" timestamp="1604629003241" />
-    <state width="1324" height="231" key="GridCell.Tab.1.center" timestamp="1604629003240">
+    <state width="1324" height="231" key="GridCell.Tab.1.bottom/0.1.1366.767@0.1.1366.767" timestamp="1604632733972" />
+    <state width="1324" height="231" key="GridCell.Tab.1.center" timestamp="1604632733971">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="231" key="GridCell.Tab.1.center/0.1.1366.767@0.1.1366.767" timestamp="1604629003240" />
-    <state width="1324" height="231" key="GridCell.Tab.1.left" timestamp="1604629003240">
+    <state width="1324" height="231" key="GridCell.Tab.1.center/0.1.1366.767@0.1.1366.767" timestamp="1604632733971" />
+    <state width="1324" height="231" key="GridCell.Tab.1.left" timestamp="1604632733971">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="231" key="GridCell.Tab.1.left/0.1.1366.767@0.1.1366.767" timestamp="1604629003240" />
-    <state width="1324" height="231" key="GridCell.Tab.1.right" timestamp="1604629003241">
+    <state width="1324" height="231" key="GridCell.Tab.1.left/0.1.1366.767@0.1.1366.767" timestamp="1604632733971" />
+    <state width="1324" height="231" key="GridCell.Tab.1.right" timestamp="1604632733971">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state width="1324" height="231" key="GridCell.Tab.1.right/0.1.1366.767@0.1.1366.767" timestamp="1604629003241" />
+    <state width="1324" height="231" key="GridCell.Tab.1.right/0.1.1366.767@0.1.1366.767" timestamp="1604632733971" />
     <state width="222" height="457" key="HiddenNamespacesPopup" timestamp="1604628783491">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
@@ -195,10 +192,10 @@
       <screen x="0" y="1" width="1366" height="767" />
     </state>
     <state x="187" y="19" key="SettingsEditor/0.1.1366.767@0.1.1366.767" timestamp="1604530112155" />
-    <state x="278" y="120" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1604544900665">
+    <state x="278" y="120" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1604632724125">
       <screen x="0" y="1" width="1366" height="767" />
     </state>
-    <state x="278" y="120" width="800" height="526" key="Vcs.Push.Dialog.v2/0.1.1366.767@0.1.1366.767" timestamp="1604544900665" />
+    <state x="278" y="120" width="800" height="526" key="Vcs.Push.Dialog.v2/0.1.1366.767@0.1.1366.767" timestamp="1604632724125" />
     <state x="491" y="301" width="373" height="164" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604542311301">
       <screen x="0" y="1" width="1366" height="767" />
     </state>

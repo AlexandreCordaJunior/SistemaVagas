@@ -46,8 +46,8 @@ func (s *VagaColaboradorService) Create(vagaColaboradorEntrada *domains.VagaCola
 		return nil, err
 	}
 
-	vagaColaborador.Vaga = *vaga
-	vagaColaborador.Colaborador = *colaborador
+	vagaColaborador.Vaga = vaga
+	vagaColaborador.Colaborador = colaborador
 
 	s.db.Create(vagaColaborador)
 	return vagaColaborador, nil

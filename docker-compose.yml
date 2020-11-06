@@ -17,6 +17,8 @@ services:
       - db
     ports:
     - "3000:3000"
+    restart_policy:
+      condition: on-failure
   adminer:
     image: adminer
     restart: always

@@ -6,46 +6,51 @@ import (
 
 type VagaColaborador struct {
 	gorm.Model
-	Colaborador   Colaborador `gorm:"foreignKey:ColaboradorId"`
+	Colaborador   *Colaborador `gorm:"foreignKey:ColaboradorId"`
 	ColaboradorId int64
-	Vaga          Vaga `gorm:"foreignKey:VagaId"`
+	Vaga          *Vaga `gorm:"foreignKey:VagaId"`
 	VagaId        int64
 }
 
 type VagaColaboradorSimpleParaVaga struct {
-	Colaborador ColaboradorSimplesDTO
+	ID          uint                   `json:"id"`
+	Colaborador *ColaboradorSimplesDTO `json:"colaborador"`
 }
 
 func (vagaColaborador *VagaColaborador) getVagaColaboradorSimpleParaVaga() VagaColaboradorSimpleParaVaga {
 	return VagaColaboradorSimpleParaVaga{
-		Colaborador: *vagaColaborador.Colaborador.GetColaboradorSimplesDTO(),
+		ID:          vagaColaborador.ID,
+		Colaborador: vagaColaborador.Colaborador.GetColaboradorSimplesDTO(),
 	}
 }
 
 type VagaColaboradorSimpleParaColaborador struct {
-	Vaga VagaSimplesDTO
+	ID   uint            `json:"id"`
+	Vaga *VagaSimplesDTO `json:"vaga"`
 }
 
 func (vagaColaborador *VagaColaborador) getVagaColaboradorSimpleParaColaborador() VagaColaboradorSimpleParaColaborador {
 	return VagaColaboradorSimpleParaColaborador{
-		Vaga: *vagaColaborador.Vaga.GetVagaSimplesDTO(),
+		ID:   vagaColaborador.ID,
+		Vaga: vagaColaborador.Vaga.GetVagaSimplesDTO(),
 	}
 }
 
 type VagaColaboradorDTO struct {
+	ID          uint                  `json:"id"`
 	Vaga        VagaSimplesDTO        `json:"vaga"`
 	Colaborador ColaboradorSimplesDTO `json:"colaborador"`
 }
 
 func (vagaColaborador *VagaColaborador) GetVagaColaboradorDTO() *VagaColaboradorDTO {
 	return &VagaColaboradorDTO{
+		ID:          vagaColaborador.ID,
 		Vaga:        *vagaColaborador.Vaga.GetVagaSimplesDTO(),
 		Colaborador: *vagaColaborador.Colaborador.GetColaboradorSimplesDTO(),
 	}
 }
 
 type VagaColaboradorEntrada struct {
-	gorm.Model
 	VagaId        int64
 	ColaboradorId int64
 }
