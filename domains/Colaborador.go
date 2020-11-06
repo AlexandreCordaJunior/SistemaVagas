@@ -7,11 +7,11 @@ import (
 
 type Colaborador struct {
 	gorm.Model
-	Nome  string  `json:"nome"`
-	Idade int     `json:"idade"`
-	Email string  `json:"email"`
-	Hash  string  `json:"hash"`
-	Vaga  []*Vaga `json:"vaga" gorm:"many2many:vaga_colaborador;"`
+	Nome            string            `json:"nome"`
+	Idade           int               `json:"idade"`
+	Email           string            `json:"email"`
+	Hash            string            `json:"hash"`
+	VagaColaborador []VagaColaborador `json:"Vaga" gorm:"foreignKey:ColaboradorId"`
 }
 
 func (c *Colaborador) Validate() error {
@@ -45,23 +45,23 @@ func (dto *ColaboradorSimplesDTO) FromDTOSimples() *Colaborador {
 }
 
 type ColaboradorComplexoDTO struct {
-	Nome  string            `json:"nome"`
-	Idade int               `json:"idade"`
-	Email string            `json:"email"`
-	Hash  string            `json:"hash"`
-	Vaga  []*VagaSimplesDTO `json:"vaga"`
+	Nome            string                                 `json:"nome"`
+	Idade           int                                    `json:"idade"`
+	Email           string                                 `json:"email"`
+	VagaColaborador []VagaColaboradorSimpleParaColaborador `json:"vagaColaborador"`
 }
 
 func (c *Colaborador) GetColaboradorComplexoDTO() *ColaboradorComplexoDTO {
-	var vagaDTO []*VagaSimplesDTO
-	for _, v := range c.Vaga {
-		vagaDTO = append(vagaDTO, v.GetVagaSimplesDTO())
+	var vagaDto []VagaColaboradorSimpleParaColaborador
+
+	for _, v := range c.VagaColaborador {
+		vagaDto = append(vagaDto, v.getVagaColaboradorSimpleParaColaborador())
 	}
 
 	return &ColaboradorComplexoDTO{
-		Nome:  c.Nome,
-		Idade: c.Idade,
-		Email: c.Email,
-		Vaga:  vagaDTO,
+		Nome:            c.Nome,
+		Idade:           c.Idade,
+		Email:           c.Email,
+		VagaColaborador: vagaDto,
 	}
 }

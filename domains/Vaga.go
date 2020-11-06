@@ -7,12 +7,12 @@ import (
 
 type Vaga struct {
 	gorm.Model
-	Nome        string         `json:"nome"`
-	Quantidade  string         `json:"quantidade"`
-	Tipo        string         `json:"tipo"` // interna ou externa
-	Salario     string         `json:"salario"`
-	Descricao   string         `json:"descricao"`
-	Colaborador []*Colaborador `json:"colaborador" gorm:"many2many:vaga_colaborador;"`
+	Nome            string            `json:"nome"`
+	Quantidade      string            `json:"quantidade"`
+	Tipo            string            `json:"tipo"` // interna ou externa
+	Salario         string            `json:"salario"`
+	Descricao       string            `json:"descricao"`
+	VagaColaborador []VagaColaborador `json:"Vaga" gorm:"foreignKey:VagaId"`
 }
 
 func (v *Vaga) Validate() error {
@@ -52,26 +52,26 @@ func (dto *VagaSimplesDTO) FromDTOSimples() *Vaga {
 }
 
 type VagaComplexaDTO struct {
-	Nome        string                   `json:"nome"`
-	Quantidade  string                   `json:"quantidade"`
-	Tipo        string                   `json:"tipo"` // interna ou externa
-	Salario     string                   `json:"salario"`
-	Descricao   string                   `json:"descricao"`
-	Colaborador []*ColaboradorSimplesDTO `json:"colaborador"`
+	Nome            string                          `json:"nome"`
+	Quantidade      string                          `json:"quantidade"`
+	Tipo            string                          `json:"tipo"` // interna ou externa
+	Salario         string                          `json:"salario"`
+	Descricao       string                          `json:"descricao"`
+	VagaColaborador []VagaColaboradorSimpleParaVaga `json:"vagaColaborador"`
 }
 
 func (v *Vaga) GetVagaComplexaDTO() *VagaComplexaDTO {
-	var colaboradorDTO []*ColaboradorSimplesDTO
-	for _, c := range v.Colaborador {
-		colaboradorDTO = append(colaboradorDTO, c.GetColaboradorSimplesDTO())
+	var vagaColaboradorDTO []VagaColaboradorSimpleParaVaga
+	for _, c := range v.VagaColaborador {
+		vagaColaboradorDTO = append(vagaColaboradorDTO, c.getVagaColaboradorSimpleParaVaga())
 	}
 
 	return &VagaComplexaDTO{
-		Nome:        v.Nome,
-		Quantidade:  v.Quantidade,
-		Tipo:        v.Tipo,
-		Salario:     v.Salario,
-		Descricao:   v.Descricao,
-		Colaborador: colaboradorDTO,
+		Nome:            v.Nome,
+		Quantidade:      v.Quantidade,
+		Tipo:            v.Tipo,
+		Salario:         v.Salario,
+		Descricao:       v.Descricao,
+		VagaColaborador: vagaColaboradorDTO,
 	}
 }

@@ -13,23 +13,18 @@ func Configure(app *fiber.App) error {
 		return err
 	}
 
-	//Colaboradores
-	err = db.AutoMigrate(&domains.Colaborador{})
-	if err != nil {
-		return err
-	}
-
-	//Vagas
-	err = db.AutoMigrate(&domains.Vaga{})
+	err = db.AutoMigrate(&domains.Colaborador{}, &domains.Vaga{}, &domains.VagaColaborador{})
 	if err != nil {
 		return err
 	}
 
 	colaboradorService := services.ColaboradorServiceFactory(db)
 	vagaService := services.VagaServiceFactory(db)
+	vagaColaboradorService := services.VagaColaboradorServiceFactory(db, colaboradorService, vagaService)
 
 	routes.ConfigColaboradorRoute(colaboradorService, app)
 	routes.ConfigVagaRoute(vagaService, app)
+	routes.ConfigVagaColaboradorRoute(vagaColaboradorService, app)
 
 	return nil
 }
